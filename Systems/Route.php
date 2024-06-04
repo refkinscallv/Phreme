@@ -78,10 +78,19 @@
                     $setClassName = end($explodeClassName);
 
                     $classWithNamespace = "Phreme\App\Controller\\" . $setClassName;
-                    $declaredClass = new $classWithNamespace();
 
-                    if(method_exists($declaredClass, $setRawClass[1])){
-                        call_user_func_array([$declaredClass, $setRawClass[1]], $setParam);
+                    $checkingClassAndMethod = $this->reflectionMethod($classWithNamespace, $setRawClass[1]);
+
+                    if (($checkingClassAndMethod >= 0 && count($setParam) == 0) || (count($setParam) <= $checkingClassAndMethod)) {
+                        $declaredClass = new $classWithNamespace();
+
+                        if(method_exists($declaredClass, $setRawClass[1])){
+                            call_user_func_array([$declaredClass, $setRawClass[1]], $setParam);
+                        } else {
+                            $this->notFound();
+                        }
+                    } else {
+                        $this->notFound();
                     }
                 }
             }
@@ -119,10 +128,19 @@
                         $setClassName = end($explodeClassName);
 
                         $classWithNamespace = "Phreme\App\Controller\\" . $setClassName;
-                        $declaredClass = new $classWithNamespace();
 
-                        if(method_exists($declaredClass, $setRawClass[1])){
-                            call_user_func_array([$declaredClass, $setRawClass[1]], $setParam);
+                        $checkingClassAndMethod = $this->reflectionMethod($classWithNamespace, $setRawClass[1]);
+
+                        if (($checkingClassAndMethod >= 0 && count($setParam) == 0) || (count($setParam) <= $checkingClassAndMethod)) {
+                            $declaredClass = new $classWithNamespace();
+
+                            if(method_exists($declaredClass, $setRawClass[1])){
+                                call_user_func_array([$declaredClass, $setRawClass[1]], $setParam);
+                            } else {
+                                $this->notFound();
+                            }
+                        } else {
+                            $this->notFound();
                         }
                     }
 
@@ -134,10 +152,27 @@
                 if(count($this->defRoutesStorage) > 0){
                     $this->defaultController();
                     return;
+                } else {
+                    $this->notFound();
                 }
-
-                $this->notFound();
             }
+        }
+        
+        /**
+         * checkParam()
+         *
+         * @param  string $class
+         * @param  string $method
+         * @return int
+         */
+        public function reflectionMethod(string $class, string $method): int {
+            $reflectionClass = new \ReflectionClass($class);
+            $reflectionMethod = $reflectionClass->getMethod($method);
+
+            $params = $reflectionMethod->getParameters();
+            $paramsCount = count($params);
+
+            return $paramsCount;
         }
         
         /**
