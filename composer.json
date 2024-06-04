@@ -1,0 +1,23 @@
+{
+    "name": "refkinscallv/phreme",
+    "description": "A Simple PHP Framework with MVC Architecture",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Refkinscallv",
+            "email": "refkinscallv@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "refkinscallv/fvss": "^1.2",
+        "filp/whoops": "^2.15"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    }
+}
