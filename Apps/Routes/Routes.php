@@ -27,8 +27,6 @@
              */
 
             $this->route->setDefault("Home@index", true);
-            $this->route->set("/about", "page/About@index", true);
-            $this->route->set("/contact", "page/Contact@index", true);
 
             $this->route->run();
         }

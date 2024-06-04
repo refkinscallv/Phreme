@@ -26,11 +26,11 @@
         /**
          * model()
          *
-         * @param  mixed $models
-         * @param  mixed $alias
+         * @param  string $models
+         * @param  string $alias
          * @return mixed
          */
-        public function model(mixed $models, mixed $alias = null): mixed {
+        public function model($models, $alias = null) {
             if (is_array($models)) {
                 $modelInstances = [];
                 foreach ($models as $model => $modelAlias) {
@@ -49,11 +49,11 @@
         /**
          * library
          *
-         * @param  mixed $libraries
-         * @param  mixed $alias
+         * @param  string $libraries
+         * @param  string $alias
          * @return mixed
          */
-        public function library(mixed $libraries, mixed $alias = null): mixed {
+        public function library($libraries, $alias = null) {
             if (is_array($libraries)) {
                 $libraryInstances = [];
                 foreach ($libraries as $library => $libraryAlias) {
@@ -76,7 +76,7 @@
          * @param  mixed $alias
          * @return mixed
          */
-        private function loadModel(mixed $model, mixed $alias = null): mixed {
+        private function loadModel($model, $alias = null) {
             $filePathInfo = pathinfo($model);
             $directory = isset($filePathInfo['dirname']) && $filePathInfo['dirname'] !== '.' ? $filePathInfo['dirname'] . '/' : '';
             $fileName = $filePathInfo['basename'];
@@ -104,7 +104,7 @@
          * @param  mixed $model
          * @return mixed
          */
-        private function getModelClassName(mixed $model): mixed {
+        private function getModelClassName($model) {
             $filePathInfo = pathinfo($model);
             return $filePathInfo['filename'];
         }
@@ -116,7 +116,7 @@
          * @param  mixed $alias
          * @return mixed
          */
-        private function loadLibrary(mixed $library, mixed $alias = null): mixed {
+        private function loadLibrary($library, $alias = null) {
             $filePathInfo = pathinfo($library);
             $directory = isset($filePathInfo['dirname']) && $filePathInfo['dirname'] !== '.' ? $filePathInfo['dirname'] . '/' : '';
             $fileName = $filePathInfo['basename'];
@@ -144,7 +144,7 @@
          * @param  mixed $library
          * @return mixed
          */
-        private function getLibraryClassName(mixed $library): mixed {
+        private function getLibraryClassName($library) {
             $filePathInfo = pathinfo($library);
             return $filePathInfo['filename'];
         }

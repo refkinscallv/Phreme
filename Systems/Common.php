@@ -336,10 +336,10 @@
         /**
          * output_json()
          *
-         * @param  array $data
+         * @param  array|object $data
          * @return mixed
          */
-        public function output_json(array $data): mixed {
+        public function output_json(mixed $data): mixed {
             echo json_encode($data, JSON_UNESCAPED_SLASHES);
         }
         
@@ -364,7 +364,7 @@
          * @return object
          */
         public function form_validate(array $data): object {
-            $fvss   = Dependencies::formValidate();
+            $fvss   = \Phreme\Dependencies\Dependencies::formValidate();
 
             return $fvss->validate($data);
         }
