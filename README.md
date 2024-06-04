@@ -1,3 +1,7 @@
+<p align="center" style="margin: 20px auto">
+  <img src="https://phreme.callvgroup.net/images/assets/phreme.png" height="150">
+</p>
+
 # Phreme - PHP Framework MVC
 
 Phreme is a PHP framework offers a comprehensive set of features to streamline web development, including:
