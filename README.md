@@ -27,11 +27,10 @@ cd phreme
 
 ### Platform Configuration For PHP
 
-In the composer.json file, adjust the PHP platform config according to the PHP version you are using.
+In the `composer.json` file, adjust the PHP platform config according to the PHP version you are using.
 
 ```json
 {
-    ...
     "config": {
         "platform": {
             "php": "7.4"
@@ -142,7 +141,7 @@ Open the `Routes.php` file in the `Apps/Routes` directory. Follow the existing e
 ```php
 <?php
 
-    namespace Phreme\App\Route;
+    namespace Phreme\App\Routes;
 
     defined("PHREME") OR exit("Forbidden Access");
 
@@ -172,7 +171,7 @@ Open the `Routes.php` file in the `Apps/Routes` directory. Follow the existing e
             $this->route->set("/about", "page/About@index", true);
             $this->route->set("/contact", "page/Contact@index", true);
 
-            /* Add your other routes */
+            /* Add Your Other Routes*/
 
             $this->route->run();
         }
