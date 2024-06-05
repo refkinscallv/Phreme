@@ -10,8 +10,6 @@
      * Phreme - A Simple PHP Framework with MVC Architecture 
      */
 
-    use Phreme\Phreme;
-
     /**
      * global variable
      */
@@ -32,4 +30,6 @@
     /**
      * running phreme
      */
-    (new Phreme())->run();
+    $phremeApp = new \Phreme\Phreme();
+    
+    $phremeApp->run();
