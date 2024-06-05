@@ -12,9 +12,9 @@
         
         public function index(){
             $this->load->view("home", [
-                "title" => $_SERVER["APP_NAME"],
-                "appName" => $_SERVER["APP_NAME"],
-                "message" => "Phreme - is a PHP framework offers a comprehensive set of features to streamline web development",
+                "official_url" => "https://phreme.callvgroup.net/",
+                "app_name" => "Phreme",
+                "version" => "1.0-dev"
             ]);
         }
 

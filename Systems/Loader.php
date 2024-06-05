@@ -5,7 +5,16 @@
     defined("PHREME") OR exit("Forbidden Acces");
 
     class Loader {
-                
+        
+        public function __construct(){
+            $this->common   = new \Phreme\Systems\Common();
+            $this->security = new \Phreme\Systems\Security();
+            $this->cookie   = new \Phreme\Systems\Cookie();
+            $this->input    = new \Phreme\Systems\Input();
+            $this->load     = $this;
+            $this->db       = new \Phreme\Systems\Database\Database();
+        }
+
         /**
          * view()
          *
