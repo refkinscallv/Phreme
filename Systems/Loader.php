@@ -22,14 +22,14 @@
          * @param  array $data
          * @return void
          */
-        public function view(string $view, array $data = []): void {
-            $output = array_merge([
+        public function view(string $thisLoaderView, array $thisLoaderData = []): void {
+            $thisLoaderOutput = array_merge([
                 "self_load" => $this
-            ], $data);
+            ], $thisLoaderData);
 
-            extract($output);
+            extract($thisLoaderOutput);
 
-            include ROOT . "/Apps/Views/" . $view . ".php";
+            include ROOT . "/Apps/Views/" . $thisLoaderView . ".php";
         }
         
         /**
