@@ -84,7 +84,7 @@
                     if (($checkingClassAndMethod >= 0 && count($setParam) == 0) || (count($setParam) <= $checkingClassAndMethod)) {
                         $declaredClass = new $classWithNamespace();
 
-                        if(class_exists($declaredClass)){
+                        if(class_exists($classWithNamespace)){
                             if(method_exists($declaredClass, $setRawClass[1])){
                                 call_user_func_array([$declaredClass, $setRawClass[1]], $setParam);
                             } else {
@@ -140,7 +140,7 @@
                         if (($checkingClassAndMethod >= 0 && count($setParam) == 0) || (count($setParam) <= $checkingClassAndMethod)) {
                             $declaredClass = new $classWithNamespace();
 
-                            if(class_exists($declaredClass)){
+                            if(class_exists($classWithNamespace)){
                                 if(method_exists($declaredClass, $setRawClass[1])){
                                     call_user_func_array([$declaredClass, $setRawClass[1]], $setParam);
                                 } else {
