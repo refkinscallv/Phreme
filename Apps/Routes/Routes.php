@@ -6,6 +6,8 @@
 
     class Routes {
 
+        private $route;
+
         public function __construct(){
             $this->route = new  \Phreme\Systems\Route();
         }

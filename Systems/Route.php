@@ -182,7 +182,7 @@
          */
         public function notFound(): void {
             http_response_code(404);
-            echo "404 Not Found";
+            include ROOT . "/Apps/Views/error/page404.php";
             die();
         }
 
