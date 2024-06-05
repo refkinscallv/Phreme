@@ -23,7 +23,7 @@
     require "vendor/autoload.php";
 
     /**
-     * phreme loader
+     * bootstrap
      */
     require "Phreme.php";
 

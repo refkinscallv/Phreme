@@ -80,6 +80,10 @@
             margin-right: 0px
         }
 
+        pre code.hljs {
+            padding: 0px !important
+        }
+
         @media screen and (max-width: 720px){
             .row [class^="col-"] {
                 margin-bottom: 20px !important
