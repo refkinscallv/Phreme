@@ -174,7 +174,7 @@
             </div>
             <h3 class="fw-light main-color"># Set <b>Route</b></h3>
             <div class="mb-5 ps-4">
-                Last step, set the route by indicating the URL path where your page will be displayed. Open the <code class="fw-bold">Apps/Routes/ folder</code>, then open the <code class="fw-bold">Routes.php</code> file
+                Last step, set the route by indicating the URL path where your page will be displayed. Open the <code class="fw-bold">Apps/Routes/</code> folder, then open the <code class="fw-bold">Routes.php</code> file
 <pre>
     <code class="language-php">
         public function run(): void {
@@ -185,7 +185,7 @@
             * 
             * (String) #PATH : To indicate a controller will be used at a specific path in URL
             * (String) #CONTROLLER : A controller class to be used includes the directory where the controller file is located.
-            * (Boolean) #PARAM : For permission to use parameters as values ​​in the controller
+            * (Boolean) #PARAM : For permission to use parameters as values in the controller
             */
 
             $this-&gt;route-&gt;setDefault(&quot;Home@index&quot;, true);
