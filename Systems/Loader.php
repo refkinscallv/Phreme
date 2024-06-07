@@ -23,9 +23,7 @@
          * @return void
          */
         public function view(string $thisLoaderView, array $thisLoaderData = []): void {
-            $thisLoaderOutput = array_merge([
-                "self_load" => $this
-            ], $thisLoaderData);
+            $thisLoaderOutput = array_merge([], $thisLoaderData);
 
             extract($thisLoaderOutput);
 
